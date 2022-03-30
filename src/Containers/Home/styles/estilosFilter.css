@@ -1,0 +1,33 @@
+.center_filer{
+    margin-top: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div_fileter{
+    padding :50px;
+    border-radius: 20px;
+    background-color:rgba(0,0,0,0.2);
+    width: 1500px;
+    margin-bottom: 5em;
+
+}
+
+.container_filter{
+    display: flex;
+    flex-direction: row;
+    
+    
+    }
+    .barra{
+        background-color: white;
+        width:200px;
+        border-radius: 20px;
+        margin: 5;
+    }
+    .center_elemnt{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+      

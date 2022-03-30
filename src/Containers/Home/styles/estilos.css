@@ -1,0 +1,16 @@
+.homeStyle{
+    background-image: url("../../../assets/img/class1.png");
+    width: "100";
+  }
+  .centerdiv{
+      display: flex;
+      align-content: center;
+      justify-content: center;
+  }
+  .font-face{
+    font-family: ClashofClans;
+    src: url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.ttf'),
+         url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.eot') format("opentype"), /* IE */
+         url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.woff') format("woff");
+  }
+ 

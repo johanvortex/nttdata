@@ -6,13 +6,16 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from './store';
 import App from './routes/App';
+import * as bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 let persistor = persistStore(store);
 persistor.purge();
 ReactDOM.render(
   <Provider store={store}>
   <PersistGate loading={null} persistor={persistor}>
-      <App /> 
+    <App /> 
+      
   </PersistGate>
 </Provider>,
   document.getElementById('root')
