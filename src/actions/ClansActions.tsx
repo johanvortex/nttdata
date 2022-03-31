@@ -59,6 +59,51 @@ export const FiltersClans = (buscador: any, frecuencia: any, maxMember: any) => 
       } else if (response.status === 403) {
         console.log("No se conecto con el api")
       }
+    }else if (frecuencia !== ""){
+      const response = await axios.get(`/clans?minClanPoints=15&limit=7&warFrequency=${frecuencia}`, {
+        headers: {
+          Accept: aceppt,
+          Authorization: token,
+        }
+      })
+      if (response.status === 200) {
+        dispatch({
+          type: types.GET_CLANS,
+          payload: response.data
+        });
+      } else if (response.status === 403) {
+        console.log("No se conecto con el api")
+      }
+    }else if (maxMember !== 0){
+      const response = await axios.get(`/clans?minClanPoints=15&limit=7&maxMembers=${maxMember}`, {
+        headers: {
+          Accept: aceppt,
+          Authorization: token,
+        }
+      })
+      if (response.status === 200) {
+        dispatch({
+          type: types.GET_CLANS,
+          payload: response.data
+        });
+      } else if (response.status === 403) {
+        console.log("No se conecto con el api")
+      }
+    }else {
+      const response = await axios.get(`/clans?minClanPoints=15&limit=7name=${buscador}&maxMembers=${maxMember}&warFrequency=${frecuencia}`, {
+        headers: {
+          Accept: aceppt,
+          Authorization: token,
+        }
+      })
+      if (response.status === 200) {
+        dispatch({
+          type: types.GET_CLANS,
+          payload: response.data
+        });
+      } else if (response.status === 403) {
+        console.log("No se conecto con el api")
+      }
     }
 
 

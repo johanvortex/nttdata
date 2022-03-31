@@ -53,8 +53,13 @@ export const Filter = () => {
                         showConfirmButton: true,
                     })
                 }
-            }
-            else {
+            } if (war !== ""){
+                dispatch(FiltersClans(buscador,war,maxMembers));
+            } if (maxMembers !== 0 || maxMembers === undefined){
+               
+                dispatch(FiltersClans(buscador,war,maxMembers));
+
+            }else if (buscador === "" && war === "" && (maxMembers === 0 || maxMembers === undefined)) {
             Swal.fire({
                 title: "Datos invlaidos ",
                 text: `Debe llenar o seleccionar uno de los tres filtros`,
@@ -88,7 +93,7 @@ export const Filter = () => {
 
                                     </div>
                                     <div className="col center_elemnt">
-                                        <select className="form-select" aria-label="Default select example">
+                                        <select className="form-select" aria-label="Default select example" onChange={handleInputChangeSelect} name="war" value={war}>
                                             <option selected>Frecuencia de guerra</option>
                                             <option value=""></option>
                                             <option value="any">Cualquiera</option>
@@ -102,7 +107,7 @@ export const Filter = () => {
                                     <div className="col center_elemnt">
                                         <div >
                                             <div className="input-group mb-3">
-                                                <input type="text" className="form-control" placeholder="Número de miembros" pattern="[0-9]{0,2}" maxLength={2} onChange={handleInputChangeNumber} name="maxMembers" value={maxMembers} aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                                                <input type="text" className="form-control" placeholder="Maximo  de miembros" pattern="[0-9]{0,2}" maxLength={2} onChange={handleInputChangeNumber} name="maxMembers" value={maxMembers} aria-label="Recipient's username" aria-describedby="basic-addon2" />
                                             </div>
                                         </div>
                                     </div>
