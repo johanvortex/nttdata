@@ -2,10 +2,6 @@ import axios from "axios";
 import { aceppt, token } from '../config/variables';
 import { types } from '../types';
 export const getClans = () => async (dispatch: any) => {
-  const query: any = {};
-  query.maxMembers = 20;
-  const queryParse = encodeURIComponent(JSON.stringify(query));
-  console.log("query", query)
   try {
     axios.interceptors.response.use(
       (response) => {
@@ -18,7 +14,7 @@ export const getClans = () => async (dispatch: any) => {
     );
     const response = await axios.get("/clans?minClanPoints=15&limit=7", {
       headers: {
-        Accept:aceppt,
+        Accept: aceppt,
         Authorization: token,
       }
     })
@@ -27,7 +23,7 @@ export const getClans = () => async (dispatch: any) => {
         type: types.GET_CLANS,
         payload: response.data
       });
-    }else if (response.status === 403 ){
+    } else if (response.status === 403) {
       console.log("No se conecto con el api")
     }
 
@@ -35,5 +31,39 @@ export const getClans = () => async (dispatch: any) => {
 
   }
 
+
+};
+export const FiltersClans = (buscador: any, frecuencia: any, maxMember: any) => async (dispatch: any) => {
+  try {
+    axios.interceptors.response.use(
+      (response) => {
+        return response;
+      },
+      (error) => {
+        console.log("Error::", error);
+        return error;
+      }
+    );
+    if (buscador !== "") {
+      const response = await axios.get(`/clans?minClanPoints=15&limit=7&name=${buscador}`, {
+        headers: {
+          Accept: aceppt,
+          Authorization: token,
+        }
+      })
+      if (response.status === 200) {
+        dispatch({
+          type: types.GET_CLANS,
+          payload: response.data
+        });
+      } else if (response.status === 403) {
+        console.log("No se conecto con el api")
+      }
+    }
+
+
+  } catch (error) {
+
+  }
 
 };

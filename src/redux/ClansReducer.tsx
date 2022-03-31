@@ -1,6 +1,8 @@
 import { types } from "../types";
 const initialState = {
-    clansFilter: {}
+    clansFilter: {
+        items:[]
+    }
 }
 const clansReducer = (state = initialState, action: { payload: any; type: string }
 ) => {

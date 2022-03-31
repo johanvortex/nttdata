@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LogoClan from "../../../assets/img/logo_clan.png";
 import "../styles/estilos.css";
 import { Filter } from "../components/Filter";
 import { ListClans } from "../components/ListClans";
+import { getClans } from "../../../actions/ClansActions";
+import { useDispatch } from "react-redux";
 export const ClashOfClanesView = () => {
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getClans())
+  }, [dispatch, getClans])
   return (
     <>
       <nav className="navbar navbar-dark bg-dark">
