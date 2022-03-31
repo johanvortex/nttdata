@@ -16,18 +16,19 @@ export const getClans = () => async (dispatch: any) => {
         return error;
       }
     );
-    const response = await axios.get("/clans?minClanPoints=15&limit=8", {
+    const response = await axios.get("/clans?minClanPoints=15&limit=7", {
       headers: {
         Accept:aceppt,
         Authorization: token,
       }
     })
-    console.log("resposne",response)
     if (response.status === 200) {
       dispatch({
         type: types.GET_CLANS,
         payload: response.data
       });
+    }else if (response.status === 403 ){
+      console.log("No se conecto con el api")
     }
 
   } catch (error) {

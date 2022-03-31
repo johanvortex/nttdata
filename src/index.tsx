@@ -10,7 +10,6 @@ import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 let persistor = persistStore(store);
-//persistor.purge();
 ReactDOM.render(
   <Provider store={store}>
   <PersistGate loading={null} persistor={persistor}>

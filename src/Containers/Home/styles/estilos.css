@@ -1,6 +1,6 @@
 .homeStyle{
     background-image: url("../../../assets/img/class1.png");
-    width: "100";
+    width: 100%;
   }
   .centerdiv{
       display: flex;
@@ -13,4 +13,8 @@
          url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.eot') format("opentype"), /* IE */
          url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.woff') format("woff");
   }
- 
+  .div_clans{
+      margin-top: 3em;
+      margin-bottom: 3em;
+  }
+   
