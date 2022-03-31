@@ -100,7 +100,6 @@ export const Filter = () => {
                                             <option value="never">Nunca</option>
                                             <option value="twice a week">Dos veces por semana</option>
                                             <option value="once a week">Una vez por semana </option>
-                                            <option value="rarely">Casi nunca</option>
                                         </select>
                                     </div>
                                     <div className="col center_elemnt">
