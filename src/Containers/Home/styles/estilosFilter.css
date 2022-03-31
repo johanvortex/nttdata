@@ -10,14 +10,10 @@
     background-color:rgba(0,0,0,0.2);
     width: 1500px;
     margin-bottom: 5em;
-
 }
-
 .container_filter{
     display: flex;
     flex-direction: row;
-    
-    
     }
     .barra{
         background-color: white;
@@ -30,4 +26,8 @@
         align-items: center;
         justify-content: center;
     }
-      
+    .button_position{
+        display:flex;
+        justify-content: flex-end;
+    }
+  
