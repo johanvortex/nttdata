@@ -5,10 +5,6 @@ import Copa from "../../../assets/img/copa.png";
 export const ListClans = () => {
     const mapItem = useSelector((state: any) => state.clansReducer.clansFilter.items);
     const permitido: boolean = mapItem.length !== 0;
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => {
-        setOpen(true)
-    };
     return (
         <>
             {permitido ? (
