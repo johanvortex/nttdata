@@ -8,7 +8,8 @@ const clansReducer = (state = initialState, action: { payload: any; type: string
         case types.GET_CLANS:
             return {
                 ...state,
-                clansFilter:action.payload   
+                clansFilter:action.payload
+                
             }
         default:
             return state;

@@ -8,7 +8,7 @@ export const Filter = () => {
     useEffect(() => {
         console.log("Estoy en useffect");
         dispatch(getClans())
-    }, [dispatch])
+    }, [dispatch,getClans])
 
     return (
         <>
