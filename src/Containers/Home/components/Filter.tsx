@@ -38,27 +38,33 @@ export const Filter = () => {
     };
     const EnviarBusqueda = () => {
         let numeroPalabras = buscador.length;
-            if (buscador !== "") {
-                if (numeroPalabras >= 3) {
-                   dispatch(FiltersClans(buscador,war,maxMembers));
-                } else {
-                    Swal.fire({
-                        title: "Datos invlaidos ",
-                        text: `Para realizar el filtro de búsqueda por nombre, ingrese más de 3 caracteres `,
-                        icon: "info",
-                        confirmButtonColor: "#0072CE",
-                        confirmButtonText: "Aceptar",
-                        showCloseButton: true,
-                        showConfirmButton: true,
-                    })
-                }
-            } if (war !== ""){
-                dispatch(FiltersClans(buscador,war,maxMembers));
-            } if (maxMembers !== 0 || maxMembers === undefined){
-               
-                dispatch(FiltersClans(buscador,war,maxMembers));
+        if (buscador !== "" && war !== "") {
+            dispatch(FiltersClans(buscador, war, maxMembers));
+        } else if (buscador !== "" && (maxMembers !== 0 || maxMembers === undefined)) {
+            dispatch(FiltersClans(buscador, war, maxMembers));
+        } else if ((maxMembers !== 0 || maxMembers === undefined) && war !== "") {
+            dispatch(FiltersClans(buscador, war, maxMembers));
+        } else if (buscador !== "") {
+            if (numeroPalabras >= 3) {
+                dispatch(FiltersClans(buscador, war, maxMembers));
+            } else {
+                Swal.fire({
+                    title: "Datos invlaidos ",
+                    text: `Para realizar el filtro de búsqueda por nombre, ingrese más de 3 caracteres `,
+                    icon: "info",
+                    confirmButtonColor: "#0072CE",
+                    confirmButtonText: "Aceptar",
+                    showCloseButton: true,
+                    showConfirmButton: true,
+                })
+            }
+        } else if (war !== "") {
+            dispatch(FiltersClans(buscador, war, maxMembers));
+        } else if (maxMembers !== 0 || maxMembers === undefined) {
 
-            }else if (buscador === "" && war === "" && (maxMembers === 0 || maxMembers === undefined)) {
+            dispatch(FiltersClans(buscador, war, maxMembers));
+
+        } else if (buscador === "" && war === "" && (maxMembers === 0 || maxMembers === undefined)) {
             Swal.fire({
                 title: "Datos invlaidos ",
                 text: `Debe llenar o seleccionar uno de los tres filtros`,
