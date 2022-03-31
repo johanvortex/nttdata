@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import "../styles/estilosFilter.css";
-import { getClans } from "../../../actions/ClansActions";
 import { useDispatch } from "react-redux";
 import { FiltersClans } from "../../../actions/ClansActions";
 import Swal from "sweetalert2";

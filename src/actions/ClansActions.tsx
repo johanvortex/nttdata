@@ -1,6 +1,8 @@
 import axios from "axios";
 import { aceppt, token } from '../config/variables';
 import { types } from '../types';
+import Swal from "sweetalert2";
+
 export const getClans = () => async (dispatch: any) => {
   try {
     axios.interceptors.response.use(
@@ -8,8 +10,16 @@ export const getClans = () => async (dispatch: any) => {
         return response;
       },
       (error) => {
-        console.log("Error::", error);
-        return error;
+        console.log(error)
+        return Swal.fire({
+          title: "Error al conectar con la api",
+          text: `Por favor valide  la dirección Ip e ingresela en la variable de token`,
+          icon: "error",
+          confirmButtonColor: "#0072CE",
+          confirmButtonText: "Aceptar",
+          showCloseButton: true,
+          showConfirmButton: true,
+      })
       }
     );
     const response = await axios.get("/clans?minClanPoints=15&limit=7", {
@@ -40,8 +50,16 @@ export const FiltersClans = (buscador: any, frecuencia: any, maxMember: any) => 
         return response;
       },
       (error) => {
-        console.log("Error::", error);
-        return error;
+        return Swal.fire({
+          title: "Datos invlaidos ",
+          text: `Por favor valide  la dirección Ip e ingresela en la variable de token`,
+          icon: "info",
+          confirmButtonColor: "#0072CE",
+          confirmButtonText: "Aceptar",
+          showCloseButton: true,
+          showConfirmButton: true,
+      })
+      
       }
     );
     if (buscador !== "") {
