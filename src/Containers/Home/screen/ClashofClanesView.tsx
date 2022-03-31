@@ -21,7 +21,10 @@ export const ClashOfClanesView = () => {
               Liga Bronze League II
             </h4>
           </a>
-          <h1 style={{ color: "#fff" }}>Holaaa</h1>
+          <div style={{display:"flex",flexDirection:"column"}}>
+          <h3 style={{ color: "#fff" }}>Johan Andrés Romero Medina</h3>
+          <h3 style={{ color: "#fff" }}>Tel:3132671904</h3>
+          </div>
         </div>
       </nav>
       <div className="homeStyle">
@@ -40,7 +43,7 @@ export const ClashOfClanesView = () => {
                   Liga Bronze League II
                 </h4>
               </a>
-              <h1 style={{ color: "#fff" }}>Holaaa</h1>
+              <h3 style={{ color: "#fff" }}>johan-rm89@hotmail.com</h3>
             </div>
           </nav>
         </div>
