@@ -5,6 +5,10 @@ import Copa from "../../../assets/img/copa.png";
 export const ListClans = () => {
     const mapItem = useSelector((state: any) => state.clansReducer.clansFilter.items);
     const permitido: boolean = mapItem.length !== 0;
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => {
+        setOpen(true)
+    };
     return (
         <>
             {permitido ? (
@@ -43,9 +47,9 @@ export const ListClans = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="col center_items">
-                                                <button type="button" className="btn btn-outline-info">Ver detalle del clan</button>
-
+                                            <div className="col center_items" style={{flexDirection:"column"}}>
+                                                <h5>Frecuencia de guerra </h5>
+                                                <h5>{idex.warFrequency} </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -64,7 +68,6 @@ export const ListClans = () => {
                 </>
 
             )}
-
         </>
     )
 
